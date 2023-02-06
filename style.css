@@ -1,0 +1,298 @@
+:root {
+  --background-color: #18171f;
+  --title: #817d92;
+  --card-background: #24232c;
+  --font-color: #e6e5ea;
+  --secondary-color: #a4ffaf;
+  /* Strngth indicator colors */
+  --to-weak: #f64a4a;
+  --weak: #fb7c58;
+  --medium: #f8cd65;
+  --strong: #a4ffaf;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "JetBrains Mono";
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+h3 {
+  color: var(--title);
+  font-size: 1rem;
+}
+
+/* =========== Passwd Card ==========  */
+
+.password-card {
+  width: 21rem;
+  height: 4rem;
+  background-color: var(--card-background);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#passwd-input {
+  width: 50%;
+  height: 2rem;
+  border: none;
+  background-color: var(--card-background);
+  font-size: 1.5rem;
+  color: var(--font-color);
+  font-family: "JetBrains Mono";
+}
+::placeholder {
+  font-family: "JetBrains Mono";
+  color: var(--font-color);
+}
+
+/* ===== Copy Btn =====  */
+
+.copy-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 0.6rem;
+}
+.copy-container svg {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+.copy-container svg:hover {
+  color: var(--font-color);
+  transition: 500ms;
+}
+.copy-txt {
+  color: var(--card-background);
+}
+
+/* ========== Option Card ========== */
+
+.option-card {
+  width: 21rem;
+  height: 26.4rem;
+  background-color: var(--card-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.length-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.title {
+  color: var(--font-color);
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+#passwd-length {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+
+/*========= Slider ========== */
+
+.slider {
+  align-self: center;
+  appearance: none;
+  width: 19.4rem;
+  height: 0.6rem;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color) 50%,
+    var(--background-color) 50%
+  );
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 1.75rem;
+  background: var(--font-color);
+  cursor: pointer;
+}
+.slider::-moz-range-thumb {
+  -moz-appearance: none;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 1.75rem;
+  background: var(--font-color);
+  cursor: pointer;
+}
+.slider::-webkit-slider-thumb:hover {
+  background: var(--background-color);
+  border: 2px solid var(--secondary-color);
+  transition: 200ms;
+}
+
+/* ========== Checkbox ========== */
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-right: 2rem;
+  align-items: flex-start;
+  gap: 1rem;
+  color: var(--font-color);
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-direction: row-reverse;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container input {
+  opacity: 0;
+  z-index: -1;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  width: 1.25rem;
+  border: 2px solid var(--font-color);
+  cursor: pointer;
+}
+.checkmark:hover {
+  border: 2px solid var(--secondary-color);
+  transition: 500ms;
+}
+.container input:checked ~ .checkmark {
+  background-color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+.checkmark:after {
+  content: url("./images/icon-check.svg");
+  display: none;
+}
+.container input:checked ~ .checkmark:after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .checkmark:after {
+  height: 5%;
+  aspect-ratio: 1/1;
+}
+
+/*  ===== Strength Container and Generate Button ===== */
+
+.generate-container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.strength-container {
+  width: 19.4rem;
+  height: 3.5rem;
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#strength-txt {
+  color: var(--title);
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+#strength-intensity {
+  color: var(--font-color);
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+.intensity-container {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.indicator-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ========== Intesity classes ========== */
+
+.no-intensity {
+  border: 2px solid var(--font-color);
+  width: 0.625rem;
+  height: 1.75rem;
+}
+.too-weak {
+  background-color: var(--to-weak);
+  border: 2px solid var(--to-weak);
+  transition: 500ms;
+}
+.weak {
+  background-color: var(--weak);
+  border: 2px soloid var(--weak);
+  transition: 500ms;
+}
+.medium {
+  background-color: var(--medium);
+  border: 2px solid var(--medium);
+  transition: 500ms;
+}
+.strong {
+  background-color: var(--strong);
+  border: 2px solid var(--strong);
+  transition: 500ms;
+}
+
+/* ========= Generate Button ========== */
+
+.generate-btn {
+  width: 19.4rem;
+  height: 3.5rem;
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  color: var(--card-background);
+  cursor: pointer;
+}
+.generate-btn:hover {
+  background-color: var(--card-background);
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  transition: 200ms;
+}
