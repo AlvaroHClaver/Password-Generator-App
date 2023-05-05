@@ -35,9 +35,9 @@ Users should be able to:
 
 ### What I learned
 
-During the development i was able to learned how to customize checkbox input type and
+During the development i was able to learne how to customize checkbox input type and
 range input type.
-To customize the checkbox the original box is made invisible and a new one is created and recieves the style properties based on the design. Check the section useful resource to get more details.
+To customize the checkbox the original box is made invisible and a new one is created and recieves the style properties based on the design. Check the section useful resources to get more details.
 
 ```html
 <label class="container"
@@ -96,8 +96,8 @@ To customize the checkbox the original box is made invisible and a new one is cr
 }
 ```
 
-I also learned how to work with range input and how to customize it. Check the resources sectio to get more details.
-To chenge the color of the elapsed course a linear gradient was used and javascript aplied to calculate the progress.
+I also learned how to work with range input and how to customize it. Check the resources section to get more details.
+To change the color of the elapsed course a linear gradient was used and javascript aplied to calculate the progress.
 
 ```html
 <input type="range" min="0" max="5" value="3" class="slider" id="myRange" />
